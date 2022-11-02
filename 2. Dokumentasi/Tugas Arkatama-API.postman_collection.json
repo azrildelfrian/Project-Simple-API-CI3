@@ -1,0 +1,477 @@
+{
+	"info": {
+		"_postman_id": "ef3b858f-4360-49bb-b33c-624f47ea0691",
+		"name": "Tugas Arkatama-API",
+		"description": "# Introduction\n\nAPI for educational\n\n# Overview\n\nThis is educational API\n\n# Authentication\n\nNo auth\n\n# Error Codes\n\n200 - is for Success/true\n\n400 - is for Failed/false\n\n# Rate limit\n\nIt is unlimited, maybe?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24142177"
+	},
+	"item": [
+		{
+			"name": "Task Detail by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/project/CI3/task/tasking/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"task",
+						"tasking",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/project/CI3/task/task/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"project",
+								"CI3",
+								"task",
+								"task",
+								"id",
+								"1"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Task data list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/project/CI3/task/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"task",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task store data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"category_id\": \"3\",\r\n\t\"title\": \"Minum\",\r\n\t\"description\": \"Minum Sprite\",\r\n\t\"start_date\": \"2022-11-01\",\r\n\t\"finish_date\": \"2022-11-01\",\r\n\t\"status\": \"Finish\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/project/CI3/task/tasking/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"task",
+						"tasking",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/project/CI3/task/task/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"project",
+								"CI3",
+								"task",
+								"task",
+								""
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Task update data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"title\":\"Makan Nasreng\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/project/CI3/task/update/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"task",
+						"update",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/project/CI3/task/tasking/id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"task",
+						"tasking",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/project/CI3/task/task/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"project",
+								"CI3",
+								"task",
+								"task",
+								"id",
+								"1"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Task Category detail by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/project/CI3/taskctg/categories/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"taskctg",
+						"categories",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/project/CI3/taskctg/taskctg/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"project",
+								"CI3",
+								"taskctg",
+								"taskctg",
+								"id",
+								"1"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Task category data list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/project/CI3/taskctg/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"taskctg",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task category store data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Minum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/project/CI3/taskctg/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"taskctg",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/project/CI3/taskctg/taskctg/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"project",
+								"CI3",
+								"taskctg",
+								"taskctg",
+								""
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Task category update data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"name\":\"Makan Besar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/project/CI3/taskctg/update/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"taskctg",
+						"update",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task category by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/project/CI3/taskctg/categories/id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"CI3",
+						"taskctg",
+						"categories",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/project/CI3/taskctg/taskctg/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"project",
+								"CI3",
+								"taskctg",
+								"taskctg",
+								"id",
+								"1"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}

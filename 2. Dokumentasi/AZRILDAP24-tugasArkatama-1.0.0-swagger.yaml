@@ -1,0 +1,230 @@
+openapi: 3.0.0
+info:
+  description: |
+    Dokumentaasi swagger untuk menunjang penilaian tugas dalam membuat dokumentasi API.
+  version: "1.0.0"
+  title: Tugas Arkatama Dokumentasi
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: azril.dap24@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: Api Dokumentasi untuk tugas
+    url: https://virtserver.swaggerhub.com/AZRILDAP24/tugasArkatama/1.0.0
+tags:
+  - name: task
+    description: Cara penggunaan task
+  - name: task_category
+    description: Cara penggunaan task_category
+paths:
+  /task/tasking/:
+    post:
+      tags:
+        - task
+      summary: Menambah data task
+      description: Cara menambahkan data ke task
+      operationId: taskTambah
+      responses:
+        default:
+          description: success
+      requestBody:
+        content:
+          application/json:
+            schema:
+                $ref: '#/components/schemas/Task'
+        description: Contoh kode untuk memasukkan data
+        required: true
+  /task/update/id/1:
+    post:
+      tags:
+        - task
+      summary: Mengupdate data pada task
+      operationId: taskEdit
+      responses:
+        default:
+          description: success
+      requestBody:
+        $ref: '#/components/requestBodies/UserArray'
+  /task/tasking/id/1:
+    get:
+      tags:
+        - task
+      summary: Menampilkan data dari id = 1
+      operationId: taskTampil
+      responses:
+        '200':
+          description: List berhasil dimuat
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          description: List gagal dimuat
+  /task/list:
+    get:
+      tags:
+        - task
+      summary: mengambil list data dari database task
+      operationId: taskList
+      responses:
+        '200':
+          description: List berhasil dimuat
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          description: List gagal dimuat
+  /task/tasking/id/{id}:
+    delete:
+      tags:
+        - task
+      summary: Hapus data
+      description: Menghapus data sesuai id
+      operationId: taskHapus
+      parameters:
+        - name: id
+          in: path
+          description: id yang ingin dihapus
+          required: true
+          schema:
+            type: string
+      responses:
+        '400':
+          description: kesalahan method/id tidak ditemukan
+          
+  /taskctg/categories/:
+    post:
+      tags:
+        - task_category
+      summary: Menambah data task
+      description: Cara menambahkan data ke task
+      operationId: taskctgTambah
+      responses:
+        default:
+          description: success
+      requestBody:
+        content:
+          application/json:
+            schema:
+                $ref: '#/components/schemas/Category'
+        description: Contoh kode untuk memasukkan data
+        required: true
+  /taskctg/update/id/1:
+    post:
+      tags:
+        - task_category
+      summary: Mengupdate data pada task
+      operationId: taskctgEdit
+      responses:
+        default:
+          description: success
+      requestBody:
+        content:
+          application/json:
+            schema:
+                $ref: '#/components/schemas/Category'
+  /taskctg/categories/id/1:
+    get:
+      tags:
+        - task_category
+      summary: Menampilkan data dari id = 1
+      operationId: taskctgTampil
+      responses:
+        '200':
+          description: List berhasil dimuat
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          description: Data dengan id {id} gagal dimuat
+  /taskctg/list/:
+    get:
+      tags:
+        - task_category
+      summary: mengambil list data dari database task
+      operationId: taskctgList
+      responses:
+        '200':
+          description: List berhasil dimuat
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '400':
+          description: List gagal dimuat
+  /taskctg/categories/id/{id}:
+    delete:
+      tags:
+        - task_category
+      summary: Hapus data
+      description: Menghapus data sesuai id
+      operationId: taskctgHapus
+      parameters:
+        - name: id
+          in: path
+          description: id yang ingin dihapus
+          required: true
+          schema:
+            type: string
+      responses:
+        '400':
+          description: kesalahan method/id tidak ditemukan
+components:
+  schemas:
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+      xml:
+        name: Category
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        category_id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        start_date:
+          type: string
+        finish_date:
+          type: string
+        status:
+          type: string
+      xml:
+        name: Task
+  requestBodies:
+    UserArray:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Task'
+      description: List dari data task
+      required: true
